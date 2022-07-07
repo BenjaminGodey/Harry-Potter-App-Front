@@ -1,0 +1,38 @@
+@use 'reset';
+@use 'vars';
+
+body {
+  font-family: sans-serif;
+  // background-image: url('../assets/img/paper_texture.jpeg');
+  background-image: url('../assets/img/old-paper.jpeg');
+}
+
+@font-face {
+  font-family: "harry";
+  src: url('../assets/fonts/harry_p.ttf');
+
+}
+@font-face {
+  font-family: "headoh";
+  src: url('../assets/fonts/headoh.TTF');
+
+}
+
+@font-face {
+  font-family: "urzeit";
+  src: url('../assets/fonts/urzeit.ttf');
+
+}
+
+
+@font-face {
+  font-family: "oldlondon";
+  src: url('../assets/fonts/OldLondon.ttf');
+
+}
+
+@font-face {
+  font-family: "lumos";
+  src: url('../assets/fonts/LUMOS.TTF');
+
+}

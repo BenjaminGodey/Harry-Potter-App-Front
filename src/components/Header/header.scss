@@ -1,0 +1,30 @@
+@use 'src/styles/vars';
+
+
+.header {
+  border-top: 4px double black;
+  border-bottom: 4px double black;
+    &__title{
+      font-family: 'oldlondon';
+      font-size: 11vw;
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      white-space: nowrap; /* Keeps the content on a single line */
+      margin: 0 auto;
+      overflow: hidden;
+      animation: typing 3s steps(20, end) forwards;
+    }
+    &__goldletter {
+      color: vars.$titleColor;
+    }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

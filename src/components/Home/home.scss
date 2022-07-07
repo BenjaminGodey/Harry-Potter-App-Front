@@ -1,0 +1,139 @@
+@use 'src/styles/vars';
+
+.main {
+  text-align: center;
+  margin: 1em auto;
+  @include vars.border;
+  font-family: 'lumos';
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.main-up {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+    &__img-container {
+      position: relative;
+      width: 30%;
+      animation: 3s move linear infinite;
+      &:hover {
+        animation: none;
+      }
+    }
+    &__img {
+      height: 100%;
+      width: 100%;
+      //max-width: 30%;
+      margin-right: 10px;
+      -webkit-filter: grayscale(100%); /* Pour les navigateurs Chrome, Safari, Opera */
+      filter: grayscale(100%); /* Firefox */
+      &--hover {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 1s;
+        &:hover {
+          opacity: 1;
+          animation: none;
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      font-family: "headoh";
+      width: 60%;
+      letter-spacing: 0.3rem;
+    }
+    &__titlespan {
+      font-weight: bolder;
+      font-size: 9vw;
+      background-color: black;
+      color: rgba(255, 255, 255, 1);
+      letter-spacing: 0.5rem;
+      text-shadow: 0 0 10px white;
+      animation: blur 1.5s infinite;
+    }
+    &__title {
+      font-weight: bolder;
+      font-size: 9.5vw;
+    }
+}
+
+.main-down {
+  display: flex;
+  margin-top: 40px;
+  font-family: 'Noticia Text';
+    &__left {
+      width: 60%;
+      padding: 0 5%;
+      &__title {
+        font-weight: bolder;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+      }
+      &__content {
+        line-height: 1.2;
+        padding: 0 10px 3vh;
+        margin: 0 auto;
+        font-size: 1.3em;
+        text-align: justify;
+      }
+    }
+    &__right {
+      width: 40%;
+      &__img {
+        max-width: 80%;
+        margin-bottom: 2em;
+        -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+        filter: grayscale(100%); /* Firefox */
+        }
+      }
+  }
+
+
+
+@media screen and (max-width: 768px) {
+  .main-down {
+    flex-direction: column;
+    &__left {
+      width: 100%;
+    }
+    &__right {
+      width: 100%;
+    }
+  }
+}
+
+// blur effect on "History"
+@keyframes blur {
+  0% {text-shadow: 0 0 5px; }
+  10% {text-shadow: 0 0 7px; transform: skew(2deg);}
+  20% {text-shadow: 0 0 9px; }
+  30% {text-shadow: 0 0 11px; transform: skew(1deg);}
+  40% {text-shadow: 0 0 13px;}
+  50% {text-shadow: 0 0 15px; transform: skew(3deg);}
+  60% {text-shadow: 0 0 13px;}
+  70% {text-shadow: 0 0 11px; transform: skew(2deg);}
+  80% {text-shadow: 0 0 9px;}
+  90% {text-shadow: 0 0 7px; transform: skew(1deg);}
+  100% {text-shadow: 0 0 5px;}
+}
+
+@keyframes move {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(-0.1deg);}
+  50% {transform: rotate(0deg);}
+  75% {transform: rotate(0.1deg);}
+  100% {transform: rotate(0deg);}
+}

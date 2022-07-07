@@ -1,0 +1,9 @@
+$titleColor:#FAC410;
+$backgroundElColor: #024572;
+$mainColor: #B3B6AF;
+$border-color: #024572;
+
+@mixin border {
+  border: 1px solid $border-color;
+  border-radius: 6px;
+}

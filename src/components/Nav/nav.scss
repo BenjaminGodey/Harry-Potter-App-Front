@@ -1,0 +1,49 @@
+@use 'src/styles/vars';
+
+.nav {
+  
+  margin: 0 auto;
+  border-bottom: 4px double black;
+  font-family: 'Noticia Text';
+
+
+  &__list {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &__item {
+    height: 50px;
+    font-size: 3vh;
+    line-height: 50px;
+    &--active {
+      font-weight: bold;
+    }
+  
+  }
+}
+
+
+.nav__item--quizz:after {
+  content:"Quizz";
+} 
+
+.nav__item--quizz--transition:after {
+  content:"Quizz";
+  animation: fadeIn 5s linear forwards;
+} 
+
+
+@keyframes fadeIn {
+  
+  0% {opacity: 0} 
+  10% {opacity: 0.5; font-size: 1.1em;}
+  20% {opacity: 1; font-size:0.9em;}
+  30% {opacity: 0.8; font-size:0.8em;}
+  40% {opacity: 0.5; font-size:1.2em;}
+  50% {opacity: 0.2; font-size:0.9em;}
+  60% {opacity: 0.9; font-size:1em;}
+  70% {opacity: 1; font-size:0.8em;}
+  80% {opacity: 0; font-size:0.9em;}
+  90% {opacity: 0; font-size:1em;}
+  100% {opacity: 1; content: "Coming"}
+}
