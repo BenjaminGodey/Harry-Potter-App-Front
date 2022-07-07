@@ -5,7 +5,7 @@ const apiMiddleWare = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_CHARACTERS: {
       axios
-        .get('http://hp.benjamingodey.fr/api/characters', {
+        .get('https://hp.benjamingodey.fr/api/characters', {
         }).then((response) => {
           console.log(response.data);
           store.dispatch(saveCharacters(response));
@@ -17,7 +17,7 @@ const apiMiddleWare = (store) => (next) => (action) => {
     }
     case FETCH_BOOKS: {
       axios
-      .get('http://hp.benjamingodey.fr/api/books', {
+      .get('https://hp.benjamingodey.fr/api/books', {
       }).then((response) => {
         console.log(response.data);
         store.dispatch(saveBooks(response));
